@@ -1,0 +1,87 @@
+<dictionaries>
+    <dictionary>
+        <name>geoip_asn</name>
+        <source>
+        <file>
+            <path>/opt/dictionaries/GeoLite2-ASN-Blocks-IPv4.csv</path>
+            <format>CSVWithNames</format>
+        </file>
+        </source>
+        <lifetime>300</lifetime>
+        <layout>
+            <ip_trie />
+        </layout>
+        <structure>
+            <key>
+                <attribute>
+                    <name>network</name>
+                    <type>String</type>
+                </attribute>
+            </key>
+            <attribute>
+                <name>autonomous_system_number</name>
+                <type>UInt32</type>
+                <null_value>0</null_value>
+            </attribute>
+            <attribute>
+                <name>autonomous_system_organization</name>
+                <type>String</type>
+                <null_value>?</null_value>
+            </attribute>
+        </structure>
+    </dictionary>
+
+    <dictionary>
+        <name>geoip_blocks</name>
+        <source>
+            <file>
+                <path>/opt/dictionaries/GeoLite2-Country-Blocks-IPv4.csv</path>
+                <format>CSVWithNames</format>
+            </file>
+        </source>
+        <lifetime>300</lifetime>
+        <layout>
+            <ip_trie />
+        </layout>
+        <structure>
+            <key>
+                <attribute>
+                    <name>network</name>
+                    <type>String</type>
+                </attribute>
+            </key>
+            <attribute>
+                <name>geoname_id</name>
+                <type>UInt64</type>
+                <null_value>0</null_value>
+            </attribute>
+        </structure>
+    </dictionary>
+
+    <dictionary>
+        <name>geoip_locations</name>
+        <source>
+            <file>
+                <path>/opt/dictionaries/GeoLite2-Country-Locations-en.csv</path>
+                <format>CSVWithNames</format>
+            </file>
+        </source>
+        <lifetime>300</lifetime>
+        <layout>
+            <complex_key_hashed />
+        </layout>
+        <structure>
+            <key>
+                <attribute>
+                    <name>geoname_id</name>
+                    <type>UInt64</type>
+                </attribute>
+            </key>
+            <attribute>
+                <name>country_iso_code</name>
+                <type>String</type>
+                <null_value>A2</null_value>
+            </attribute>
+        </structure>
+    </dictionary>
+</dictionaries>
