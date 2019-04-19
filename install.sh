@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 mkdir -p /opt/dictionaries
 mkdir -p /etc/clickhouse-server
 cp geoip_dictionary.xml /etc/clickhouse-server/geoip_dictionary.xml
