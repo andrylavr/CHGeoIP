@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  clickhouse:
+    image: yandex/clickhouse-server:latest
+    ports:
+      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9009:9009'
+      - '127.0.0.1:8123:8123'
+    volumes:
+      - './geoip_dictionary.xml:/etc/clickhouse-server/geoip_dictionary.xml'
+      - './GeoLite2-ASN-Blocks-IPv4.csv:/opt/dictionaries/GeoLite2-ASN-Blocks-IPv4.csv'
+      - './GeoLite2-Country-Blocks-IPv4.json:/opt/dictionaries/GeoLite2-Country-Blocks-IPv4.json'
+      - './GeoLite2-Country-Locations-en.json:/opt/dictionaries/GeoLite2-Country-Locations-en.json'

@@ -35,8 +35,8 @@
         <name>geoip_blocks</name>
         <source>
             <file>
-                <path>/opt/dictionaries/GeoLite2-Country-Blocks-IPv4.csv</path>
-                <format>CSVWithNames</format>
+                <path>/opt/dictionaries/GeoLite2-Country-Blocks-IPv4.json</path>
+                <format>JSONEachRow</format>
             </file>
         </source>
         <lifetime>300</lifetime>
@@ -62,8 +62,8 @@
         <name>geoip_locations</name>
         <source>
             <file>
-                <path>/opt/dictionaries/GeoLite2-Country-Locations-en.csv</path>
-                <format>CSVWithNames</format>
+                <path>/opt/dictionaries/GeoLite2-Country-Locations-en.json</path>
+                <format>JSONEachRow</format>
             </file>
         </source>
         <lifetime>300</lifetime>
